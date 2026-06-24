@@ -120,6 +120,13 @@
 
   <!-- Products Section -->
   <section class="products" id="products">
+    <!-- FLOATING CART BUTTON -->
+<button id="floatingCartBtn" class="floating-cart-btn" onclick="toggleCart()">
+  🛒 <span id="cartCount">0</span>
+</button>
+
+<!-- CART DRAWER -->
+<div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
     <div class="container">
       <div class="section-header">
         <span class="section-subtitle">Lini Persenjataan Gaming</span>
@@ -179,7 +186,7 @@
               <div class="price-idr" data-raw-price="300000">Rp 300.000</div>
               <div class="price-usd">$54.99</div>
             </div>
-            <button class="btn btn-secondary product-action" onclick="selectProduct('AGG-MK-87')">Pesan Sekarang</button>
+            <button class="btn btn-secondary product-action" onclick="addToCart('AGG-MK-87')">Tambah ke Keranjang</button>
           </div>
         </div>
 
@@ -213,7 +220,7 @@
               <div class="price-idr" data-raw-price="399000">Rp 399.000</div>
               <div class="price-usd">$27.99</div>
             </div>
-            <button class="btn btn-secondary product-action" onclick="selectProduct('AGG-XM-5')">Pesan Sekarang</button>
+            <button class="btn btn-secondary product-action" onclick="addToCart('AGG-XM-5')">Tambah ke keranjang</button>
           </div>
         </div>
 
@@ -247,7 +254,7 @@
               <div class="price-idr" data-raw-price="499000">Rp 499.000</div>
               <div class="price-usd">$34.99</div>
             </div>
-            <button class="btn btn-secondary product-action" onclick="selectProduct('AGG-HN-7')">Pesan Sekarang</button>
+            <button class="btn btn-secondary product-action" onclick="addtocart('AGG-HN-7')">Tambah ke keranjang</button>
           </div>
         </div>
 
@@ -277,7 +284,7 @@
               <div class="price-idr" data-raw-price="199000">Rp 199.000</div>
               <div class="price-usd">$13.99</div>
             </div>
-            <button class="btn btn-secondary product-action" onclick="selectProduct('AGG-MP-RGB')">Pesan Sekarang</button>
+            <button class="btn btn-secondary product-action" onclick="addtocart('AGG-MP-RGB')">Tambah ke keranjang</button>
           </div>
         </div>
 
@@ -311,7 +318,7 @@
               <div class="price-idr" data-raw-price="149000">Rp 149.000</div>
               <div class="price-usd">$10.49</div>
             </div>
-            <button class="btn btn-secondary product-action" onclick="selectProduct('AGG-HS-1')">Pesan Sekarang</button>
+            <button class="btn btn-secondary product-action" onclick="addtocart('AGG-HS-1')">Tambah Ke keranjang</button>
           </div>
         </div>
 
@@ -346,7 +353,7 @@
               <div class="price-idr" data-raw-price="1799000">Rp 1.799.000</div>
               <div class="price-usd">$124.99</div>
             </div>
-            <button class="btn btn-secondary product-action" onclick="selectProduct('AGG-GC-1')">Pesan Sekarang</button>
+            <button class="btn btn-secondary product-action" onclick="addtocart('AGG-GC-1')">Tambah ke keranjang</button>
           </div>
         </div>
 
@@ -380,7 +387,7 @@
               <div class="price-idr" data-raw-price="649000">Rp 649.000</div>
               <div class="price-usd">$44.99</div>
             </div>
-            <button class="btn btn-secondary product-action" onclick="selectProduct('AGG-MIC-900')">Pesan Sekarang</button>
+            <button class="btn btn-secondary product-action" onclick="addtocart('AGG-MIC-900')">Tambah ke keranjang</button>
           </div>
         </div>
 
@@ -414,7 +421,7 @@
               <div class="price-idr" data-raw-price="1299000">Rp 1.299.000</div>
               <div class="price-usd">$89.99</div>
             </div>
-            <button class="btn btn-secondary product-action" onclick="selectProduct('AGG-GD-120')">Pesan Sekarang</button>
+            <button class="btn btn-secondary product-action" onclick="addtocart('AGG-GD-120')">Tambah ke keranjang</button>
           </div>
         </div>
 
@@ -474,7 +481,7 @@
         </div>
 
         <!-- Ringkasan Pesanan (Summary) -->
-        <div class="order-summary">
+       <div id="cartSummaryList"></div>
           <h3>Ringkasan Pemesanan</h3>
           <div class="summary-row">
             <span>Nama Produk:</span>
@@ -573,7 +580,7 @@
       <div class="footer-bottom">
         <div>&copy; 2026 Ancient Gaming Gear. Seluruh hak cipta dilindungi.</div>
         <div class="social-links">
-          <span>Play Beyond Limits</span>
+          <span>Play Gaming to breaks the limits</span>
         </div>
       </div>
     </div>
