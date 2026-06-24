@@ -104,8 +104,8 @@ body::after {
 
 /* Helper Layout Classes */
 .container {
-  max-width: var(--container-width);
-  margin: 0 auto;
+  -width: min(1200px, 90%);
+  margin: 0auto;
   padding: 0 24px;
   position: relative;
 }
@@ -228,10 +228,10 @@ header .container {
 }
 .nav-toggle span {
   display: block;
-  width: 24px;
+  width:min(1200px,90%);
   height: 2px;
   background: var(--text-main);
-  margin: 5px 0;
+  margin: auto px 0;
   transition: var(--transition-speed);
 }
 
@@ -502,7 +502,7 @@ header .container {
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 24px;
 }
 
 .product-card {
@@ -811,7 +811,7 @@ textarea.form-control {
 footer {
   background: #04030a;
   border-top: 1px solid var(--glass-border);
-  padding: 60px 0 20px 0;
+  padding: 60px 0
 }
 
 .footer-grid {
